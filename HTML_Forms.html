@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="color-scheme" content="light">
+  <title>Form</title>
+</head>
+<body>
+
+<form action="/action_page.php">
+
+  <fieldset>
+    <legend>Contact information:</legend>
+    <table>
+      <tr>
+        <td><label for="fname">First name:</label></td>
+        <td><input type="text" id="fname" name="fname" placeholder="First name"></td>
+        <td colspan="2">Preferred contact method:</td>
+      </tr>
+      <tr>
+        <td><label for="lname">Last name:</label></td>
+        <td><input type="text" id="lname" name="lname" placeholder="Last name"></td>
+        <td><input type="checkbox" id="cemail" name="cemail"></td>
+        <td><label for="cemail">Email</label></td>
+      </tr>
+      <tr>
+        <td><label for="email">Email:</label></td>
+        <td><input type="email" id="email" name="email" placeholder="Email"></td>
+        <td><input type="checkbox" id="ctel" name="ctel"></td>
+        <td><label for="ctel">Telephone</label></td>
+      </tr>
+      <tr>
+        <td><label for="tel">Telephone:</label></td>
+        <td><input type="tel" id="tel" name="tel" placeholder="Telephone"></td>
+      </tr>
+    </table>
+  </fieldset>
+
+  <fieldset>
+    <legend>Feedback:</legend>
+    <table>
+      <tr>
+        <td><label for="subject">Message subject:</label></td>
+        <td><input type="text" id="subject" name="subject" placeholder="Message subject"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><textarea name="message" rows="15" cols="50"></textarea></td>
+      </tr>
+      <tr>
+        <td colspan="2"><label for="file">Attach a file:</label> <input type="file" id="file" name="file"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><hr></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="submit" value="Send"></td>
+      </tr>
+    </table>
+  </fieldset>
+
+</form>
+
+</body>
+</html>
