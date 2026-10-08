@@ -67,6 +67,56 @@
       <h2 id="settings">Settings I used</h2>
       <p>These are the settings that are needed and what they do.</p>
 
+      <h3>Grid</h3>
+      <ul>
+        <li><code>display: grid</code> -> turns the container into a grid.</li>
+        <li><code>flex: 1</code> -> makes every item grow to the same size.</li>
+        <li><code>flex-direction: column</code> -> puts the items under each other instead of in a row.</li>
+      </ul>
+
+      <h2 id="responsive">How it changes on different screens.</h2>
+      <p>I used media queries to change the layout when the screen gets smaller. You can test this by making the browser window smaller.</p>
+      <ul>
+        <li><b>Big screen (over 800px):</b> the grid has 3 columns and the menu is in one row.</li>
+        <li><b>Tablet (500px - 800px):</b> the grid changes into 2 columns.</li>
+        <li><b>Phone (under 500px):</b> the grid has only 1 column, the menu links go under each other and the feature lists below are on top of each other.</li>
+      </ul>
+
+      <p>The images have <code>width: 100%</code>, so they get bigger and smaller together with the box.</p>
+
+      <h2 id="features">Features</h2>
+      <p>Here are the main features of Flexbox and Grid and how to use them. The two lists are next to each other with Flexbox.</p>
+
+      <div class="features">
+        <div class="feature-box">
+          <h3>Flexbox</h3>
+          <ul>
+            <li><b>flex-direction</b> chooses a row or a column, for example <code>flex-direction: column;</code></li>
+            <li><b>justify-content</b> moves items along the row, for example <code>center</code> or <code>between</code>.</li>
+            <li><b>align-items</b> lines up items vertically, for example <code>align-items: center;</code></li>
+            <li><b>flex-wrap</b> lets items go to the next line when there is no space: <code>flex-wrap: wrap;</code></li>
+            <li><b>flex</b> sets how much an item can grow: <code>flex: 1;</code></li>
+            <li><b>gap</b> adds space between the items.</li>
+          </ul>
+        </div>
+
+        <div class="feature-box">
+          <h3>Grid</h3>
+          <ul>
+            <li><b>grid-template-columns</b> sets the columns, for example <code>200px 1fr</code>.</li>
+            <li><b>grid-template-rows</b> sets the rows the same way.</li>
+            <li><b>fr</b> is a unit that means one part of the free space.</li>
+            <li><b>repeat()</b> is a shorter way to write columns. <code>repeat(3, 1fr)</code> is the same as <code>1fr 1fr 1fr</code>.</li>
+            <li><b>grid-column</b> makes an item wider, for example <code>grid-column: span 2;</code></li>
+            <li><b>gap</b> adds space between rows and columns.</li>
+          </ul>
+        </div>
+      </div>
+      
+  </div>
+
+  <div class="footer">
+    <p>Made by Khiem</p>
   </div>
 
 </body>

@@ -27,3 +27,86 @@ body {
 .active {
   background-color: #04AA6D;
 }
+
+/* Header */
+.header {
+  background-color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+/* Main content */
+.content {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+code {
+  background-color: #ddd;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* Grid with pictures */
+.grid-container {
+  display: grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:15px;
+}
+
+.grid-item {
+  background-color:white;
+  padding:10px;
+  text-align:center;
+  border-radius:5px;
+}
+
+.grid-item img{
+  display:flex;
+  gap:20px;
+}
+
+/* Features next to each other with Flexbox */
+.features {
+  display: flex;
+  gap: 20px;
+}
+
+.feature-box {
+  flex:1;
+  background-color:white;
+  padding:10px 20px;
+  border-radius:5px;
+}
+
+/* Footer */
+.footer {
+  background-color: #555;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .grid-container {
+    grid-template-columns: repeat(2. 1fr);
+  }
+}
+
+/* Phone */
+@media (max-width: 500px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .icon-bar {
+    flex-direction:column;
+  }
+
+  .features {
+    flex-direction:column;
+  }
+}
