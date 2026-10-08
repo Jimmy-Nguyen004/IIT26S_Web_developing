@@ -11,7 +11,7 @@ body {
   background-color: #555;
 }
 
-.icon_bar a {
+.icon-bar a {
   flex: 1;
   text-align: center;
   padding: 12px 0;
@@ -63,8 +63,7 @@ code {
 }
 
 .grid-item img{
-  display:flex;
-  gap:20px;
+  width: 100%;
 }
 
 /* Features next to each other with Flexbox */
@@ -92,7 +91,7 @@ code {
 /* Tablet */
 @media (max-width: 800px) {
   .grid-container {
-    grid-template-columns: repeat(2. 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

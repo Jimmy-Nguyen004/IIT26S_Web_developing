@@ -15,10 +15,10 @@
   <!-- Menu -->
   <div class="icon-bar">
     <a class="active" href="#"><i class="fa fa-home"></i></a>
-    <a class="#layout"><i class="fa fa-th-large"></i></a>
-    <a class="#settings"><i class="fa fa-cog"></i></a>
-    <a class="#responsive"><i class="fa fa-mobile"></i></a>
-    <a class="#features"><i class="fa fa-list"></i></a>
+    <a href="#layout"><i class="fa fa-th-large"></i></a>
+    <a href="#settings"><i class="fa fa-cog"></i></a>
+    <a href="#responsive"><i class="fa fa-mobile"></i></a>
+    <a href="#features"><i class="fa fa-list"></i></a>
   </div>
 
   <div class="header">
@@ -69,9 +69,16 @@
 
       <h3>Grid</h3>
       <ul>
-        <li><code>display: grid</code> -> turns the container into a grid.</li>
-        <li><code>flex: 1</code> -> makes every item grow to the same size.</li>
-        <li><code>flex-direction: column</code> -> puts the items under each other instead of in a row.</li>
+        <li><code>display: grid</code> turns the container into a grid.</li>
+        <li><code>grid-template-columns: repeat(3, 1fr)</code> makes 3 columns. 1fr means one part of the free space, so all columns are the same size.</li>
+        <li><code>gap: 15px</code> adds space between the rows and columns.</li>
+      </ul>
+
+      <h3>Flexbox</h3>
+      <ul>
+        <li><code>display: flex</code> puts the items in a row.</li>
+        <li><code>flex: 1</code> makes every item grow to the same size.</li>
+        <li><code>flex-direction: column</code> puts the items under each other instead of in a row. I use this on small screens.</li>
       </ul>
 
       <h2 id="responsive">How it changes on different screens.</h2>
@@ -92,7 +99,7 @@
           <h3>Flexbox</h3>
           <ul>
             <li><b>flex-direction</b> chooses a row or a column, for example <code>flex-direction: column;</code></li>
-            <li><b>justify-content</b> moves items along the row, for example <code>center</code> or <code>between</code>.</li>
+            <li><b>justify-content</b> moves items along the row, for example <code>center</code> or <code>space-between</code>.</li>
             <li><b>align-items</b> lines up items vertically, for example <code>align-items: center;</code></li>
             <li><b>flex-wrap</b> lets items go to the next line when there is no space: <code>flex-wrap: wrap;</code></li>
             <li><b>flex</b> sets how much an item can grow: <code>flex: 1;</code></li>
@@ -117,6 +124,7 @@
 
   <div class="footer">
     <p>Made by Khiem</p>
+    <p>Photos from Lorem Piscum</p>
   </div>
 
 </body>
