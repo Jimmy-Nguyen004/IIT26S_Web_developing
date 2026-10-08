@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Flexbox and Grid</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <!-- Menu -->
+  <div class="icon-bar">
+    <a class="active" href="#"><i class="fa fa-home"></i></a>
+    <a class="#layout"><i class="fa fa-th-large"></i></a>
+    <a class="#settings"><i class="fa fa-cog"></i></a>
+    <a class="#responsive"><i class="fa fa-mobile"></i></a>
+    <a class="#features"><i class="fa fa-list"></i></a>
+  </div>
+
+  <div class="header">
+    <h1>Flexbox and Grid</h1>
+    <p>This page shows how CSS Grid and Flexbox work. The menu on the top is made with Flexbox and the
+      pictures are placed with Grid.
+    </p>
+  </div>
+
+  <div class="content">
+    <h2 id="layout">How the content is laid out</h2>
+    <p>The pictures are inside a div with the class <code>grid-container</code>. I gave it <code>display: grid</code> so all the boxes inside it become grid items. 
+      Then <code>grid-template-columns: repeat(3, 1fr)</code> makes three columns that are all the same width. The boxes fill the grid from left to right, and when 
+      a row is full they continue on the next row.</p>
+
+      <div class="grid-container">
+        <div class="grid-item">
+          <img src="https://picsum.photos/seed/pic1/400/300" alt="Picture 1">
+          <p>Grid item 1</p>
+        </div>
+        <div class="grid-item">
+          <img src="https://picsum.photos/seed/pic2/400/300" alt="Picture 2">
+          <p>Grid item 2</p>
+        </div>
+        <div class="grid-item">
+          <img src="https://picsum.photos/seed/pic3/400/300" alt="Picture 3">
+          <p>Grid item 3</p>
+        </div>
+        <div class="grid-item">
+          <img src="https://picsum.photos/seed/pic4/400/300" alt="Picture 4">
+          <p>Grid item 4</p>
+        </div>
+        <div class="grid-item">
+          <img src="https://picsum.photos/seed/pic5/400/300" alt="Picture 5">
+          <p>Grid item 5</p>
+        </div>
+        <div class="grid-item">
+          <img src="https://picsum.photos/seed/pic6/400/300" alt="Picture 6">
+          <p>Grid item 6</p>
+        </div>
+      </div>
+
+      <p>The menu works with Flexbox. The <code>icon-bar</code> div has <code>display: flex</code>, which puts all the links next to each other in a row. 
+        Every link has <code>flex: 1</code>, so they all get the same width and fill the whole bar.</p>
+
+      <h2 id="settings">Settings I used</h2>
+      <p>These are the settings that are needed and what they do.</p>
+
+  </div>
+
+</body>
+
+</html>
