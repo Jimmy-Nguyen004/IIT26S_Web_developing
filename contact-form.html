@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Form</title>
+</head>
+<body>
+
+<form action="/action_page.php" method="post">
+
+  <fieldset>
+    <legend>Contact information:</legend>
+
+    <table>
+      <tr>
+        <td><input type="text" id="fname" name="fname" placeholder="First name"></td>
+        <td>Preferred contact method:</td>
+      </tr>
+      <tr>
+        <td><input type="text" id="lname" name="lname" placeholder="Last name"></td>
+        <td>
+          <input type="checkbox" id="contact_email" name="contact_method" value="email">
+          <label for="contact_email">Email</label>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="email" id="email" name="email" placeholder="Email"></td>
+        <td>
+          <input type="checkbox" id="contact_tel" name="contact_method" value="telephone">
+          <label for="contact_tel">Telephone</label>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="tel" id="telephone" name="telephone" placeholder="Telephone"></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </fieldset>
+
+  <br>
+
+  <fieldset>
+    <legend>Feedback:</legend>
+
+    <label for="subject"></label>
+    <input type="text" id="subject" name="subject" placeholder="Message subject">
+    <br><br>
+
+    <textarea name="message" rows="15" cols="50"></textarea>
+    <br><br>
+
+    Attach a file: <input type="file" name="attachment">
+    <br><br>
+
+    <input type="submit" value="Send">
+
+  </fieldset>
+
+</form>
+
+</body>
+</html>
