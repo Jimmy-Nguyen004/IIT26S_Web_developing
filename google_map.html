@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Map Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    input {
+      padding: 5px;
+      margin: 5px;
+    }
+    button {
+      padding: 5px 15px;
+    }
+    iframe {
+      margin-top: 15px;
+      border: 1px solid gray;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Map Search</h1>
+
+  <label>Street:</label>
+  <input type="text" id="street" placeholder="e.g. Mannerheimintie 1">
+
+  <label>City:</label>
+  <input type="text" id="city" placeholder="e.g. Helsinki">
+
+  <button onclick="searchMap()">Search</button>
+
+  <br>
+
+  <iframe id="map"
+          width="600"
+          height="450"
+          src="https://maps.google.com/maps?q=Helsinki&output=embed">
+  </iframe>
+
+  <script>
+    function searchMap() {
+      // Get the text the user typed
+      var street = document.getElementById("street").value;
+      var city = document.getElementById("city").value;
+
+      // Check that the city is not empty
+      if (city == "") {
+        alert("Please type a city name!");
+        return;
+      }
+
+      // Put street and city together
+      var address = street + ", " + city;
+
+      // Change the iframe address to show the new place
+      document.getElementById("map").src =
+        "https://maps.google.com/maps?q=" + encodeURIComponent(address) + "&output=embed";
+    }
+  </script>
+
+</body>
+</html>
