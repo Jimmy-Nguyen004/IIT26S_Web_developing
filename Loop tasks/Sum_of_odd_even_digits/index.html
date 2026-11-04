@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sum of odd and even numbers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+    <h1>Sum of odd and even numbers</h1>
+    <p class="description">Adds up the odd numbers and the even numbers from 1 to N separately. For example N = 10 gives odd 25 and even 30.</p>
+    <div class="panel">
+        <label for="n">Enter N</label>
+        <div class="row">
+            <input id="n" type="number" step="1" min="1" value="10" inputmode="numeric">
+            <button id="go">Calculate</button>
+        </div>
+        <div class="answer" id="out" aria-live="polite"></div>
+    </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
