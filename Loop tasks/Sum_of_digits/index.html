@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sum from 1 to N</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+    <h1>Sum from 1 to N</h1>
+    <p class="description">Adds the numbers 1 + 2 + 3 + ... + N together. For example N = 10 gives result of 55. N must be at least 1.</p>
+    <div class="panel">
+        <label for="n">Enter N</label>
+        <div class="row">
+            <input id="n" type="number" step="1" min="1" value="10" inputmode="numeric">
+            <button id="go">Calculate</button>
+        </div>
+        <div class="answer" id="out" aria-live="polite"></div>
+    </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
