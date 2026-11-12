@@ -1,0 +1,219 @@
+:root {
+  --bg: #f0f4f8;
+  --card: #ffffff;
+  --text: #222222;
+  --muted: #555555;
+  --accent: #1f4fbf;
+  --border: #cccccc;
+  --dark: #1d2733;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Menu at the top made with Flexbox */
+.site-header {
+  position: sticky;
+  top: 0;
+  background-color: var(--dark);
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+  padding: 12px 20px;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #dddddd;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Big title area */
+.hero {
+  background-color: var(--card);
+  text-align: center;
+  padding: 50px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero h1 {
+  margin-top: 0;
+  font-size: 40px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 25px;
+  color: var(--muted);
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--accent);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: black;
+}
+
+/* Sections */
+.section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 20px;
+    scroll-margin-top: 60px;
+}
+
+/* Filter button */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter {
+    font-size: 16px;
+    padding: 6px 16px;
+    background-color: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.filter:hover,
+.filter.active {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
+/* Cards with Grid */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.card.hidden {
+    display: none;
+}
+
+.card h3 {
+    margin: 5px 0 10px;
+}
+
+.card p {
+    color: var(--muted);
+    margin-top: 0;
+}
+
+.date {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.tags {
+    display: flex;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px;
+}
+
+.tags li {
+    font-size: 13px;
+    background-color: var(--bg);
+    border-radius: 4px;
+    padding: 2px 8px;
+}
+
+/* margin-top */
+.card-link {
+    margin-top: auto;
+    color: var(--accent);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+.count {
+    color: var(--muted);
+}
+
+/* What I learnt */
+.learned {
+    display: flex;
+    gap: 20px;
+}
+
+.learned-box {
+    flex: 1;
+    background-color: var(--card);
+    border-left: 4px solid var(--accent);
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.site-footer {
+    background-color: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+}

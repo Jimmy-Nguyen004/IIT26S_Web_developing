@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>IIT26S Web Developing - Learning Diary</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <header class="site-header">
+            <nav class="nav">
+                <a class="logo" href="#top">Khiem</a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#assignments">Assignments</a></li>
+                    <li><a href="#learned">What I learnt</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="top">
+
+            <section class="hero">
+                <h1>IIT26S Web Developing</h1>
+                <p>This is the home page for my course work. Every assignment I made during the course is linked below, from my first HTML page to small JavaScript programs.</p>
+                <a class="button" href="#assignments">See the assignment</a>
+            </section>
+            
+            <section id="about" class="section">
+                <h2>About this site</h2>
+                <p>This site is plain HTML, CSS and Javascript with no frameworks. The code is in my Github repository and every assignment is in its own file or folder. This page uses all the things I have learnt from this course and what I have learnt myself.</p>               
+            </section>
+
+            <section id="assignments" class="section">
+
+                <h2>Assignments</h2>
+
+                <div class="filters" role="group" aria-label="Filter assignments by topic">
+                    <button class="filter active" data-filter="all" aria-pressed="true">All</button>
+                    <button class="filter" data-filter="html" aria-pressed="false">HTML</button>
+                    <button class="filter" data-filter="css" aria-pressed="false">CSS</button>
+                    <button class="filter" data-filter="js" aria-pressed="false">Javascript</button>
+                </div>
+
+                <div class="cards">
+
+                    <article class="card" data-tags="html">
+                        <span class="date">Sep 2026</span>
+                        <h3>Introduction to HTML</h3>
+                        <p>A tutorial page about the basic tags: headings, paragraphs, links, images, lists and a table.</p>
+                        <ul class="tags"><li>HTML</li></ul>
+                        <a class="card-link" href="../introduce_to_HTML.html">Open page</a>
+                    </article>
+
+                    <article class="card" data-tags="html">
+                        <span class="date">Sep 2026</span>
+                        <h3>HTML Forms</h3>
+                        <p>A feedback form with fieldsets, labels, text, email and phone inputs, checkboxes, a text area and a file upload.</p>
+                        <ul class="tags"><li>HTML</li></ul>
+                        <a class="card-link" href="../HTML_Forms.html">Open page</a>
+                    </article>
+
+                    <article class="card" data-tags="css html">
+                        <span class="date">Oct 2026</span>
+                        <h3>Flexbox and Grid</h3>
+                        <p>A responsive page with a flexbox icon menu and a picture grid that changes from 3 to 2 to 1 column.</p>
+                        <ul class="tags"><li>CSS</li><li>HTML</li></ul>
+                        <a class="card-link" href="../flexbox_grid/index.html">Open page</a>
+                    </article>
+
+                    <article class="card" data-tags="js html">
+                        <span class="date">Oct 2026</span>
+                        <h3>Calculators</h3>
+                        <p>Three calculators: with a dropdown list, with option buttons and with increment/decrement buttons.</p>
+                        <ul class="tags"><li>JavaScript</li><li>HTML</li></ul>
+                        <a class="card-link" href="../cal/index.html">Open page</a>
+                    </article>
+
+                    <article class="card" data-tags="js html">
+                        <span class="date">Oct 2026</span>
+                        <h3>Map Search</h3>
+                        <p>Type a street and a city and the embedded Google map moves to that address.</p>
+                        <ul class="tags"><li>JavaScript</li><li>HTML</li></ul>
+                        <a class="card-link" href="../google_map.html">Open page</a>
+                    </article>
+
+                    <article class="card" data-tags="js css">
+                        <span class="date">Nov 2026</span>
+                        <h3>Loop task: Sum from 1 to N</h3>
+                        <p>Adds 1 + 2 + … + N with a for loop and shows the steps for small numbers.</p>
+                        <ul class="tags"><li>JavaScript</li><li>CSS</li></ul>
+                        <a class="card-link" href="../Loop%20tasks/Sum_of_digits/index.html">Open page</a>
+                    </article>
+
+                    <article class="card" data-tags="js css">
+                        <span class="date">Nov 2026</span>
+                        <h3>Loop task: Factorial N!</h3>
+                        <p>Calculates N! with BigInt so that even 1000! is shown exactly.</p>
+                        <ul class="tags"><li>JavaScript</li><li>CSS</li></ul>
+                        <a class="card-link" href="../Loop%20tasks/Factorial/index.html">Open page</a>
+                    </article>
+
+                    <article class="card" data-tags="js css">
+                        <span class="date">Nov 2026</span>
+                        <h3>Loop task: Odd and even sums</h3>
+                        <p>Adds the odd and the even numbers from 1 to N separately using the % operator.</p>
+                        <ul class="tags"><li>JavaScript</li><li>CSS</li></ul>
+                        <a class="card-link" href="../Loop%20tasks/Sum_of_odd_even_digits/index.html">Open page</a>
+                    </article>
+
+                </div>
+                <p class="count" id="count" aria-live="polite"></p>
+
+            </section>
+
+            <section id="learned" class="section">
+                <h2>What I learnt</h2>
+                <div class="learned">
+                    <div class="learned-box">
+                        <h3>HTML</h3>
+                        <p>Tags given the page its structure. Forms need labels and good input types, and the browser sends the data to a server with GET or POST.</p>
+                    </div>
+                    <div class="learned-box">
+                        <h3>CSS</h3>
+                        <p>Selectors pick the elements. Flexbox is good for one row, grid for rows and columns, and media queries make the page work on phones.</p>
+                    </div>
+                    <div class="learned-box">
+                        <h3>JavaScript</h3>
+                        <p>Reading values from inputs, checking them, using loops and functions, and writing the answer back into the page.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="site-footer">
+            <p>Made by Khiem &middot; IIT26S Web Developing &middot; <span id="year">2026</span></p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
