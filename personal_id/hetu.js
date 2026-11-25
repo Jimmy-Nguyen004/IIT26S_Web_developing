@@ -5,10 +5,10 @@ const BIRTH_DATE_PATTERN = /^\d{2}\/\d{2}\/\d{4}$/; // DD/MM/YYYY
 const MIN_INDIVIDUAL_NUMBER = 2;
 const MAX_INDIVIDUAL_NUMBER = 899;
 
-function getCentury(sign) {
+function getCentury(centurySign) {
     if (centurySign === "+") return 1800;
-    if ("-YXWVU",includes(centurySign)) return 1900;
-    if ("ABCDEF",includes(centurySign)) return 2000;
+    if ("-YXWVU".includes(centurySign)) return 1900;
+    if ("ABCDEF".includes(centurySign)) return 2000;
     return null;
 }
 
@@ -88,4 +88,88 @@ function validateIdentityCode(identityCode, referenceDate = new Date()) {
     if (dateError !== "") {
         return {isValid: false, error: dateError}
     }
+
+    if (Number(individualNumber) < MIN_INDIVIDUAL_NUMBER) {
+        return {isValid: false, error: 'individual number must be 002-899'};
+    }
+
+    if (controlCharacter !== getControlCharacter(datePart, individualNumber)) {
+        return {isValid: false, error: "control character is wrong"}
+    }
+
+    const birthDate = new Date(year, month -1, day);
+    return {
+        isValid: true,
+        sex: isMaleFemale(Number(individualNumber)) ? "Male" : "Female",
+        age: calculateAge(birthDate, referenceDate),
+    };
+}
+
+// Task 2a //
+function createControlCharacter(firstPart) {
+    const code = firstPart.trim().toUpperCase();
+
+    if (!FIRST_PART_PATTERN.test(code)) {
+        return {isValid: false, error: "format must be DDMMYYCZZZ. e.g. 131052-308"}
+    }
+
+    const checkResult = validateIdentityCode(code + "?");
+    if (!checkResult.isValid && checkResult.error !== "control character is wrong") {
+        return {isValid: false, error: checkResult.error};
+    }
+
+    return {isValid: true, controlCharacter: getControlCharacter(code.slice(0, 6), code.slice(7, 10))};
+}
+
+// Task 2b //
+function createIdentityCode(birthDateText, sex, individualNumberText) {
+    const dateText = birthDateText.trim();
+
+    if (!BIRTH_DATE_PATTERN.test(dateText)) {
+        return {isValid: false, error: "date must be DD/MM/YYYY"};
+    }
+
+    const [dayText, monthText, yearText] = dateText.split("/");
+    const day = Number(dayText);
+    const month = Number(monthText);
+    const year = Number(yearText);
+
+    if (year < 1800 || year > 2099) {
+        return {isValid:false, error: "year must be 1800-2099"};
+    }
+
+    const dateError = getDateError(day, month, year);
+    if (dateError !== "") {
+        return {isValid: false, error: dateError};
+    }
+
+    if (sex !== "F" && sex !== "M") {
+        return {isValid: false, error: "choose sex F or M"};
+    }
+
+    const isMalePerson = sex === "M";
+
+    let individualNumber;
+  if (individualNumberText === "") {
+    // random number 2..898, then fix odd/even so it matches the sex (max 899)
+    individualNumber = MIN_INDIVIDUAL_NUMBER + Math.floor(Math.random() * 897);
+    if (isMaleFemale(individualNumber) !== isMalePerson) individualNumber++;
+  } else {
+    individualNumber = Number(individualNumberText);
+    if (!(individualNumber >= MIN_INDIVIDUAL_NUMBER && individualNumber <= MAX_INDIVIDUAL_NUMBER)) {
+      return { isValid: false, error: "individual number must be 2-899" };
+    }
+    if (isMaleFemale(individualNumber) !== isMalePerson) {
+      return { isValid: false, error: isMalePerson ? "individual number must be odd for M" : "individual number must be even for F" };
+    }
+  }
+
+  const datePart = dayText + monthText + yearText.slice(2);
+  const individualNumberPart = String(individualNumber).padStart(3, "0");
+  const controlCharacter = getControlCharacter(datePart, individualNumberPart);
+
+  return {
+    isValid: true,
+    identityCode: datePart + getCenturySign(year) + individualNumberPart + controlCharacter,
+  };
 }

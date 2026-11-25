@@ -14,15 +14,15 @@
         <p class="sub">Validator and generator in plain JavaScript</p>
         <section>
             <h2>1. Check identity code</h2>
-            <p class="help">Type the full 11-character code, e.g. <code>131052-308T</code>.</p>
+            <p class="help">Type the full 11-character code, e.g. <code>131052_308T</code>.</p>
             <form id="f1" novalidate>
                 <div class="row">
                     <div>
                         <label for="hetu">Identity code:</label>
-                        <input type="text" id="hetu" maxlength="11" placeholder="131052-308T" autocomplete="off">
+                        <input type="text" id="hetu" maxlength="11" placeholder="131052_308T" autocomplete="off">
                     </div>
                     <div>
-                        <label for="ageDate">Day of birth:</label>
+                        <label for="ageDate">Age on date (empty for today):</label>
                         <input type="text" id="ageDate" maxlength="10" placeholder="12.10.2004" autocomplete="off">
                     </div>
                 </div>
@@ -32,7 +32,7 @@
         </section>
         <section>
             <h2>2a. Control character for a given first part</h2>
-            <p class="help">Type the first 10 characters, e.g. <code>131052-308</code>, and get the last character.</p>
+            <p class="help">Type the first 10 characters, e.g. <code>131052_308</code>, and get the last character.</p>
             <form id="f2" novalidate>
                 <label for="prefix">First part:</label>
                 <input type="text" id="prefix" maxlength="10" placeholder="131052-308" autocomplete="off">
@@ -60,7 +60,7 @@
         </section>
     </main>
     <script src="hetu.js"></script>
-    <script src="app.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
