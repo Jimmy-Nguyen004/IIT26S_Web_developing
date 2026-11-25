@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Finnish personal identity code</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Finnish personal identity code (HETU)</h1>
+        <p class="sub">Validator and generator in plain JavaScript</p>
+        <section>
+            <h2>1. Check identity code</h2>
+            <p class="help">Type the full 11-character code, e.g. <code>131052-308T</code>.</p>
+            <form id="f1" novalidate>
+                <div class="row">
+                    <div>
+                        <label for="hetu">Identity code:</label>
+                        <input type="text" id="hetu" maxlength="11" placeholder="131052-308T" autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="ageDate">Day of birth:</label>
+                        <input type="text" id="ageDate" maxlength="10" placeholder="12.10.2004" autocomplete="off">
+                    </div>
+                </div>
+                <button type="submit">Check</button><button type="button" class="ghost" id="clear1">Clear</button>
+            </form>
+            <div id="out1" class="out"></div>
+        </section>
+        <section>
+            <h2>2a. Control character for a given first part</h2>
+            <p class="help">Type the first 10 characters, e.g. <code>131052-308</code>, and get the last character.</p>
+            <form id="f2" novalidate>
+                <label for="prefix">First part:</label>
+                <input type="text" id="prefix" maxlength="10" placeholder="131052-308" autocomplete="off">
+                <br><button type="submit">Make control character</button>
+            </form>
+            <div id="out2" class="out"></div>
+        </section>
+        <section>
+            <h2>2b. Create a new identity code</h2>
+            <form id="f3" novalidate>
+                <div class="row">
+                    <div><label for="dob">Date of birth <span class="hint">DD/MM/YYYY:</span></label>
+                        <input type="text" id="dob" maxlength="10" placeholder="13/10/1952" autocomplete="off">
+                    </div>
+                    <div><label for="ind">Individual number <span class="hint">2–899, optional:</span></label>
+                        <input type="text" id="ind" maxlength="3" placeholder="random" autocomplete="off">
+                    </div>
+                </div>
+                <label>Sex:</label>
+                <div class="radios"><label><input type="radio" name="sex" value="F"> F (female)</label><label><input
+                            type="radio" name="sex" value="M"> M (male)</label></div>
+                <button type="submit">Create</button>
+            </form>
+            <div id="out3" class="out"></div>
+        </section>
+    </main>
+    <script src="hetu.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+:root {
+    --ink: #1d2433;
+    --muted: #5b6478;
+    --line: #d9dde6;
+    --bg: #f6f7fa;
+    --ok: #0f7a3f;
+    --okbg: #e6f5ec;
+    --bad: #b42318;
+    --badbg: #fdecea;
+    --accent: #2f5bd3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+}
+
+main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 28px 20px 60px;
+}
+
+h1 {
+    font-size: 1.6rem;
+    margin: 0 0 4px;
+}
+
+.sub {
+    color: var(--muted);
+    margin: 0 0 22px;
+}
+
+section {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+}
+
+h2 {
+    font-size: 1.15rem;
+    margin: 0 0 6px;
+}
+
+.help {
+    color: var(--muted);
+    font-size: .93rem;
+    margin: 0 0 14px;
+}
+
+.help code {
+    background: #eef1f6;
+    padding: 1px 5px;
+    border-radius: 4px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    font-size: .92rem;
+    margin: 10px 0 4px;
+}
+
+.hint {
+    font-weight: 400;
+    color: var(--muted);
+}
+
+input[type=text] {
+    font: inherit;
+    padding: 8px 10px;
+    border: 1px solid #b9c0cf;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 260px;
+    font-family: ui-monospace, Consolas, monospace;
+    letter-spacing: .04em;
+}
+
+input:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 22px;
+    align-items: flex-end;
+}
+
+.radios label {
+    display: inline-flex;
+    gap: 6px;
+    font-weight: 400;
+    margin-right: 16px;
+}
+
+button {
+    font: inherit;
+    font-weight: 600;
+    padding: 8px 18px;
+    margin-top: 14px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+}
+
+button.ghost {
+    background: #fff;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    margin-left: 6px;
+}
+
+.out {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-family: ui-monospace, Consolas, monospace;
+    font-size: .95rem;
+    white-space: pre-wrap;
+    display: none;
+}
+
+.out.ok {
+    display: block;
+    background: var(--okbg);
+    color: var(--ok);
+    border: 1px solid #b5e0c5;
+}
+
+.out.bad {
+    display: block;
+    background: var(--badbg);
+    color: var(--bad);
+    border: 1px solid #f3c1bc;
+}
