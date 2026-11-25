@@ -27,8 +27,8 @@
         <script>
             function countL(text) {
                 let count = 0;
-                for (let char in text.toLowerCase()) {
-                    if (char === "1") {
+                for (let char of text.toLowerCase()) {
+                    if (char === "l") {
                         count++;
                     }
                 }
